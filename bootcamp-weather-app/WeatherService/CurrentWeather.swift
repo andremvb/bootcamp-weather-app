@@ -69,12 +69,6 @@ struct APIWeather: Decodable {
 //  let gustMph: Double
 //  let gustKph: Double
 
-    struct WeatherCondition: Decodable {
-        let text: String
-        let icon: String
-        let code: Int
-    }
-
     enum CodingKeys: String, CodingKey {
         case lastUpdatedEpoch = "last_updated_epoch"
         case lastUpdated = "last_updated"
@@ -84,4 +78,10 @@ struct APIWeather: Decodable {
         case tempC = "temp_c"
         case tempF = "temp_f"
     }
+}
+
+struct WeatherCondition: Decodable {
+    let text: String
+    let icon: String
+    let code: Int
 }

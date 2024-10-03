@@ -20,6 +20,7 @@
 		9F79BEB12CAF4EA600649ED0 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEAD2CAF4EA600649ED0 /* WeatherViewModel.swift */; };
 		9F79BEB22CAF4EA600649ED0 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEA82CAF4EA600649ED0 /* Color+Addition.swift */; };
 		9F79BEB32CAF4EA600649ED0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEAB2CAF4EA600649ED0 /* WeatherView.swift */; };
+		45A2CC8D2CAF4D880015A0D7 /* FutureWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC8C2CAF4D880015A0D7 /* FutureWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		9F79BEAA2CAF4EA600649ED0 /* ForecastWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherView.swift; sourceTree = "<group>"; };
 		9F79BEAB2CAF4EA600649ED0 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		9F79BEAD2CAF4EA600649ED0 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		45A2CC8C2CAF4D880015A0D7 /* FutureWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				45A2CC882CAF4BD40015A0D7 /* WeatherService.swift */,
 				45A2CC8A2CAF4C100015A0D7 /* CurrentWeather.swift */,
+				45A2CC8C2CAF4D880015A0D7 /* FutureWeather.swift */,
 			);
 			path = WeatherService;
 			sourceTree = "<group>";
@@ -317,6 +320,8 @@
 			files = (
 				45A2CC892CAF4BD40015A0D7 /* WeatherService.swift in Sources */,
 				45A2CC8B2CAF4C100015A0D7 /* CurrentWeather.swift in Sources */,
+				45A2CC5E2CAF379D0015A0D7 /* ContentView.swift in Sources */,
+				45A2CC8D2CAF4D880015A0D7 /* FutureWeather.swift in Sources */,
 				45A2CC862CAF38B60015A0D7 /* API.swift in Sources */,
 				45A2CC5C2CAF379D0015A0D7 /* bootcamp_weather_appApp.swift in Sources */,
 				9F79BEB02CAF4EA600649ED0 /* ForecastWeatherView.swift in Sources */,

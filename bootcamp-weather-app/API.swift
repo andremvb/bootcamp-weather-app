@@ -15,7 +15,9 @@ struct City {
     let description: String
     let wind: String
     let humidity: String
-    let weather: [Weather]
+    let todayWeather: Weather
+    let tomorrowWeather: Weather
+    let dayAfterTomorrowWeather: Weather
 }
 
 struct Weather {
@@ -38,7 +40,19 @@ extension Weather {
         self.wind = String(format: "%.0f", apiWeather.windMph) + " mph"
         self.humidity = String(apiWeather.humidity) + "%"
         self.date = date
-        self.type = ""
+        self.type = apiWeather.condition.text
+    }
+
+    init(futureWeather: FutureWeather, date: String) {
+        // TODO: Remove !
+        let day = futureWeather.forecast.forecastday.first!
+        self.temperature = String(format: "%.1f", day.day.avgtempC) + "/" + String(format: "%.1f", day.day.avgtempF)
+        self.wind = ""
+        self.humidity = ""
+        self.date = date
+        self.temperatureF = ""
+        self.icon = day.day.condition.icon
+        self.type = day.day.condition.text
     }
 }
 

@@ -15,14 +15,17 @@ struct WeatherService {
     func fetchCity(_ city: String) async throws -> City {
         // TODO make this calls not waiting ? :v
         let currentData = try await fetchCurrent()
-        // TODO: Un hardcode
-//        let tomorrowData = try await fetchFuture(date: "2024-11-04")
-//        let oneDayAfterData = try await fetchFuture(date: "2024-11-05")
+        // TODO: Unhardcode dates
+        let tomorrowData = try await fetchFuture(date: "2024-11-04")
+        let oneDayAfterData = try await fetchFuture(date: "2024-11-05")
 
+        // TODO: Unhardcode
         let currentWeather = Weather(
             apiWeather: currentData.current,
             date: "Today"
         )
+        let tomorrowWeather = Weather(futureWeather: tomorrowData, date: "Tomorrow")
+        let oneDayAfterWeather = Weather(futureWeather: oneDayAfterData, date: "Friday")
 
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -34,14 +37,12 @@ struct WeatherService {
             name: currentData.location.name,
             mainIcon: currentWeather.icon,
             temperature: currentWeather.temperatureF,
-            description: "Some description",
+            description: currentWeather.type,
             wind: currentWeather.wind,
             humidity: currentWeather.humidity,
-            weather: [
-                currentWeather,
-                currentWeather,
-                currentWeather
-            ]
+            todayWeather: currentWeather,
+            tomorrowWeather: tomorrowWeather,
+            dayAfterTomorrowWeather: oneDayAfterWeather
         )
     }
 
@@ -61,7 +62,7 @@ struct WeatherService {
     }
 
     // date format = 2024-11-02
-    private func fetchFuture(date: String) async throws -> CurrentWeather {
+    private func fetchFuture(date: String) async throws -> FutureWeather {
         let string = baseURL + "future.json"
         // TODO: Remove !
         var components = URLComponents(string: string)!
@@ -71,8 +72,9 @@ struct WeatherService {
             URLQueryItem(name: "dt", value: date)
         ]
         let (data, _ ) = try await session.data(from: components.url!)
+//        print(String(data: data, encoding: .utf8))
         let decoder = JSONDecoder()
-        let currentWeather = try decoder.decode(CurrentWeather.self, from: data)
-        return currentWeather
+        let futureWeather = try decoder.decode(FutureWeather.self, from: data)
+        return futureWeather
     }
 }
