@@ -66,7 +66,7 @@ struct WeatherView: View {
         }
         .ignoresSafeArea(.all)
         .task {
-            viewModel.getWeatherInfo()
+            await viewModel.getWeatherInfo()
         }
     }
     

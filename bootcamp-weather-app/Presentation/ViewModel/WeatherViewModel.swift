@@ -13,6 +13,8 @@ class WeatherViewModel: ObservableObject {
     @Published var todayWeather: Weather?
     @Published var fridayWeather: Weather?
     
+    private let service = WeatherService()
+    
     var weatherTodayDescription: String {
         if tomorrowWeather?.type == "rain" {
             return "It's a sunny day."
@@ -28,11 +30,11 @@ class WeatherViewModel: ObservableObject {
         return formatter.string(from: date)
     }
 
-    func getWeatherInfo() {
-      /*  city = City(name: "San Francisco _")
-        tomorrowWeather = Weather(type: .rain, wind: "82.4", humidity: "86", date: "Tomorrow")
-        todayWeather = Weather(type: .sunny, wind: "82.4", humidity: "86", date: "Today")
-        fridayWeather = Weather(type: .rain, wind: "82.4", humidity: "86", date: "Friday")*/
+    func getWeatherInfo() async {
+        do {
+            self.city = try await service.fetchCity("San Francisco")
+        } catch let error {
+        }
     }
     
 }
