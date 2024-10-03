@@ -27,6 +27,7 @@ struct WeatherView: View {
                     Image(systemName: "magnifyingglass")
                         .frame(width: 24, height: 24)
                         .foregroundColor(.white)
+                    
                 }
             
             }
@@ -38,26 +39,31 @@ struct WeatherView: View {
                     .foregroundColor(.white)
                     .bold()
                 
-                Text("Tuesday, 12 Apr 2022")
+                Text(viewModel.city?.date ?? "")
                     .font(.system(size: 16))
                     .foregroundColor(.white)
             }
             
             Spacer()
 
-            todayWeather()
+            if let city = viewModel.city {
+                TodayWeatherView(city: city)
+            }
             
             Spacer()
 
             HStack(spacing: 30) {
+                
                 if let tomorrowWeather = viewModel.city?.tomorrowWeather{
                     ForecastWeatherView(weather: tomorrowWeather)
                 }
-                if let fridayWeather = viewModel.city?.dayAfterTomorrowWeather {
-                    ForecastWeatherView(weather: fridayWeather)
-                }
+                
                 if let todayWeather = viewModel.city?.todayWeather {
                     ForecastWeatherView(weather: todayWeather)
+                }
+                
+                if let fridayWeather = viewModel.city?.dayAfterTomorrowWeather {
+                    ForecastWeatherView(weather: fridayWeather)
                 }
             }
             .font(.subheadline)
@@ -74,45 +80,6 @@ struct WeatherView: View {
         .task {
             await viewModel.getWeatherInfo()
         }
-    }
-    
-    @ViewBuilder
-    func todayWeather() -> some View {
-        
-        VStack(spacing: 10) {
-            Image(systemName: "sun.max.fill")
-                .font(.system(size: 60))
-                .foregroundColor(.yellow)
-            
-            Text(String(format: "%@°F", viewModel.city?.temperature ?? ""))
-                .font(.system(size: 57))
-                .foregroundColor(.white)
-                .bold()
-            
-            Text(viewModel.weatherTodayDescription)
-                .font(.system(size: 22))
-                .foregroundColor(.white)
-        }
-        
-        HStack(spacing: 40) {
-            HStack {
-                Image(systemName: "sun.max.fill")
-                    .foregroundColor(.white)
-                
-                Text("3 mph")
-                    .font(.system(size: 16))
-                    .foregroundColor(.white)
-            }
-            HStack {
-                Image(systemName: "sun.max.fill")
-                    .foregroundColor(.white)
-                
-                Text("60%")
-                    .font(.system(size: 16))
-                    .foregroundColor(.white)
-            }
-        }
-        .font(.headline)
     }
 
 }

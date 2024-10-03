@@ -11,10 +11,6 @@ class WeatherViewModel: ObservableObject {
     @Published var city: City?
     private let service = WeatherService()
     
-    var weatherTodayDescription: String {
-        "It's a sunny day."
-    }
-    
     var currentTime: String {
         let date = Date()
         let formatter = DateFormatter()
@@ -26,6 +22,7 @@ class WeatherViewModel: ObservableObject {
         do {
             self.city = try await service.fetchCity("San Francisco")
         } catch let error {
+            print(error.localizedDescription)
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ForecastWeatherView: View {
     private let weather: Weather
@@ -16,14 +17,20 @@ struct ForecastWeatherView: View {
 
     var body: some View {
          VStack {
-             Image(systemName: "sun.max.fill")
-                 .foregroundColor(.white)
+             if let url = URL(string: "https:" + weather.icon) {
+                 URLImage(url){ image in
+                     image
+                         .resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .frame(width: 28)
+                 }
+             }
              
-             Text(String(format: "%@°/%@F", weather.temperature, weather.temperatureF))
+             Text(String(format: weather.temperature))
                  .font(.system(size: 18))
                  .foregroundColor(.white)
              
-             Text("Tomorrow")
+             Text(weather.date)
                  .font(.system(size: 20))
                  .foregroundColor(.white)
          }
