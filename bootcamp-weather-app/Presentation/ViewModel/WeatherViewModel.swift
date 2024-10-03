@@ -9,18 +9,10 @@ import Foundation
 
 class WeatherViewModel: ObservableObject {
     @Published var city: City?
-    @Published var tomorrowWeather: Weather?
-    @Published var todayWeather: Weather?
-    @Published var fridayWeather: Weather?
-    
     private let service = WeatherService()
     
     var weatherTodayDescription: String {
-        if tomorrowWeather?.type == "rain" {
-            return "It's a sunny day."
-        } else {
-            return "It's a rainy day."
-        }
+        "It's a sunny day."
     }
     
     var currentTime: String {

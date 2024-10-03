@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ForecastWeatherView: View {
-    private let weather: Weather?
+    private let weather: Weather
     
-    init(weather: Weather?) {
+    init(weather: Weather) {
         self.weather = weather
     }
 
     var body: some View {
          VStack {
-             Image(systemName: weather?.type == "rain" ? "cloud.rain.fill" : "sun.max.fill")
+             Image(systemName: "sun.max.fill")
                  .foregroundColor(.white)
              
-             Text(String(format: "%@°/%@F", weather?.wind ?? "", weather?.humidity ?? ""))
+             Text(String(format: "%@°/%@F", weather.temperature, weather.temperatureF))
                  .font(.system(size: 18))
                  .foregroundColor(.white)
              
-             Text(weather?.date ?? "")
+             Text("Tomorrow")
                  .font(.system(size: 20))
                  .foregroundColor(.white)
          }

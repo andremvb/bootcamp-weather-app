@@ -50,9 +50,15 @@ struct WeatherView: View {
             Spacer()
 
             HStack(spacing: 30) {
-                ForecastWeatherView(weather: viewModel.tomorrowWeather)
-                ForecastWeatherView(weather: viewModel.todayWeather)
-                ForecastWeatherView(weather: viewModel.fridayWeather)
+                if let tomorrowWeather = viewModel.city?.tomorrowWeather{
+                    ForecastWeatherView(weather: tomorrowWeather)
+                }
+                if let fridayWeather = viewModel.city?.dayAfterTomorrowWeather {
+                    ForecastWeatherView(weather: fridayWeather)
+                }
+                if let todayWeather = viewModel.city?.todayWeather {
+                    ForecastWeatherView(weather: todayWeather)
+                }
             }
             .font(.subheadline)
             .padding(.top, 20)
@@ -78,7 +84,7 @@ struct WeatherView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.yellow)
             
-            Text(String(format: "%@°F", viewModel.todayWeather?.wind ?? ""))
+            Text(String(format: "%@°F", viewModel.city?.temperature ?? ""))
                 .font(.system(size: 57))
                 .foregroundColor(.white)
                 .bold()
