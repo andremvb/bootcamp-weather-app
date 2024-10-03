@@ -27,6 +27,7 @@ struct Weather {
     let humidity: String
     // Today / Tomorrow / Friday
     let date: String
+    let type: String
 }
 
 extension Weather {
@@ -37,6 +38,7 @@ extension Weather {
         self.wind = String(format: "%.0f", apiWeather.windMph) + " mph"
         self.humidity = String(apiWeather.humidity) + "%"
         self.date = date
+        self.type = ""
     }
 }
 

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		45A2CC5C2CAF379D0015A0D7 /* bootcamp_weather_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC5B2CAF379D0015A0D7 /* bootcamp_weather_appApp.swift */; };
-		45A2CC5E2CAF379D0015A0D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC5D2CAF379D0015A0D7 /* ContentView.swift */; };
 		45A2CC602CAF379F0015A0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A2CC5F2CAF379F0015A0D7 /* Assets.xcassets */; };
 		45A2CC632CAF379F0015A0D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A2CC622CAF379F0015A0D7 /* Preview Assets.xcassets */; };
 		45A2CC6D2CAF379F0015A0D7 /* bootcamp_weather_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC6C2CAF379F0015A0D7 /* bootcamp_weather_appTests.swift */; };
@@ -17,6 +16,10 @@
 		45A2CC862CAF38B60015A0D7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC852CAF38B60015A0D7 /* API.swift */; };
 		45A2CC892CAF4BD40015A0D7 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC882CAF4BD40015A0D7 /* WeatherService.swift */; };
 		45A2CC8B2CAF4C100015A0D7 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A2CC8A2CAF4C100015A0D7 /* CurrentWeather.swift */; };
+		9F79BEB02CAF4EA600649ED0 /* ForecastWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEAA2CAF4EA600649ED0 /* ForecastWeatherView.swift */; };
+		9F79BEB12CAF4EA600649ED0 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEAD2CAF4EA600649ED0 /* WeatherViewModel.swift */; };
+		9F79BEB22CAF4EA600649ED0 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEA82CAF4EA600649ED0 /* Color+Addition.swift */; };
+		9F79BEB32CAF4EA600649ED0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79BEAB2CAF4EA600649ED0 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 /* Begin PBXFileReference section */
 		45A2CC582CAF379D0015A0D7 /* bootcamp-weather-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bootcamp-weather-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A2CC5B2CAF379D0015A0D7 /* bootcamp_weather_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bootcamp_weather_appApp.swift; sourceTree = "<group>"; };
-		45A2CC5D2CAF379D0015A0D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45A2CC5F2CAF379F0015A0D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45A2CC622CAF379F0015A0D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45A2CC682CAF379F0015A0D7 /* bootcamp-weather-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bootcamp-weather-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +52,10 @@
 		45A2CC852CAF38B60015A0D7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		45A2CC882CAF4BD40015A0D7 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		45A2CC8A2CAF4C100015A0D7 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		9F79BEA82CAF4EA600649ED0 /* Color+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Addition.swift"; sourceTree = "<group>"; };
+		9F79BEAA2CAF4EA600649ED0 /* ForecastWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherView.swift; sourceTree = "<group>"; };
+		9F79BEAB2CAF4EA600649ED0 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		9F79BEAD2CAF4EA600649ED0 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				45A2CC5B2CAF379D0015A0D7 /* bootcamp_weather_appApp.swift */,
-				45A2CC5D2CAF379D0015A0D7 /* ContentView.swift */,
 				45A2CC852CAF38B60015A0D7 /* API.swift */,
+				9F79BEA92CAF4EA600649ED0 /* Extension */,
+				9F79BEAF2CAF4EA600649ED0 /* Presentation */,
 				45A2CC872CAF4BBF0015A0D7 /* WeatherService */,
 				45A2CC5F2CAF379F0015A0D7 /* Assets.xcassets */,
 				45A2CC612CAF379F0015A0D7 /* Preview Content */,
@@ -142,6 +149,40 @@
 				45A2CC8A2CAF4C100015A0D7 /* CurrentWeather.swift */,
 			);
 			path = WeatherService;
+			sourceTree = "<group>";
+		};
+		9F79BEA92CAF4EA600649ED0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9F79BEA82CAF4EA600649ED0 /* Color+Addition.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9F79BEAC2CAF4EA600649ED0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F79BEAA2CAF4EA600649ED0 /* ForecastWeatherView.swift */,
+				9F79BEAB2CAF4EA600649ED0 /* WeatherView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F79BEAE2CAF4EA600649ED0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F79BEAD2CAF4EA600649ED0 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9F79BEAF2CAF4EA600649ED0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9F79BEAC2CAF4EA600649ED0 /* View */,
+				9F79BEAE2CAF4EA600649ED0 /* ViewModel */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +317,12 @@
 			files = (
 				45A2CC892CAF4BD40015A0D7 /* WeatherService.swift in Sources */,
 				45A2CC8B2CAF4C100015A0D7 /* CurrentWeather.swift in Sources */,
-				45A2CC5E2CAF379D0015A0D7 /* ContentView.swift in Sources */,
 				45A2CC862CAF38B60015A0D7 /* API.swift in Sources */,
 				45A2CC5C2CAF379D0015A0D7 /* bootcamp_weather_appApp.swift in Sources */,
+				9F79BEB02CAF4EA600649ED0 /* ForecastWeatherView.swift in Sources */,
+				9F79BEB12CAF4EA600649ED0 /* WeatherViewModel.swift in Sources */,
+				9F79BEB22CAF4EA600649ED0 /* Color+Addition.swift in Sources */,
+				9F79BEB32CAF4EA600649ED0 /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
