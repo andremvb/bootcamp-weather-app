@@ -87,7 +87,9 @@ struct WeatherService {
     private func dateAfter(days: Int) throws -> String {
         let today = Date()
         let calendar = Calendar.current
-        guard let tomorrow = calendar.date(byAdding: .day, value: days, to: today) else {
+        // TODO: FIX! Cannot add date because API only supports 14 to 300 days. Error:
+        // dt parameter should be in yyyy-MM-dd format and between 14 days and 300 days from today in the future
+        guard let tomorrow = calendar.date(byAdding: .month, value: days, to: today) else {
             throw ServiceError.badDateConversion
         }
         let dateFormatter = DateFormatter()
